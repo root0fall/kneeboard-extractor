@@ -1,5 +1,21 @@
 '''extract BMS kneeboard images'''
 
+# Kneeboard Extractor
+# Copyright (C) 2023 root0fall
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 import sys
 import os
 import time
@@ -7,7 +23,7 @@ import winreg
 import argparse
 from PIL import Image
 
-VERSION = "0.9.0"
+VERSION = "1.0.0b"
 
 INIT_DDS = 7982
 DDS_COUNT = 16
@@ -128,7 +144,7 @@ if __name__ == "__main__":
                         help="directory to output right kneeboard images (optional)")
     parser.add_argument("--debug", action="store_true", help="enable debug messages")
     parser.add_argument("--silent", action="store_false", help="disable messages")
-
+    parser.add_argument('--version', action='version', version=f'{parser.prog} {VERSION}')
     args = parser.parse_args()
 
     DEBUG = args.debug if args.debug is not None else DEBUG

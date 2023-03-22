@@ -39,6 +39,12 @@ options:
 
   --silent           disable messages
 
+## Example
+
+### launch in monitor mode (waiting for changes to kneeboard DDS files) and output all files to "E:\LEFT DIR" 
+
+`kneeboard_extractor.exe --left 'E:\LEFT KBD' --monitor`
+
 ## Executable
 
 v1.0.0b

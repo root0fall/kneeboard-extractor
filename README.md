@@ -8,6 +8,8 @@ The user is able to set the utility to monitor for changes (e.g. when updating k
 
 The utility can also be used to simply output PNG files for other uses, but it was primarily created to use with Open Kneeboard, by setting 2 tabs, 1 each for left and right page outputs.
 
+The BMS base directory should be located automatically, but if not, supply it with *--basedir*
+
 It is written in python under GPL 3.0 licensing.
 
 The executable in Releases has been tested on Windows 10 x86_64.

@@ -2,9 +2,9 @@
 
 ## Description
 
-Kneeboard Extractor is a command-line utility that converts kneeboard DDS files into PNG files. It splits the left/right kneeboard pages from the DDS images and outputs them to the directory specfied by the --left command-line argument. If the preference is to have left and right pages go to different directories, use the --right command-line argument to specify where the righthand pages will go.
+Kneeboard Extractor is a command-line utility that converts kneeboard DDS files into PNG files. It splits the left/right kneeboard pages from the DDS images and outputs them to the directory specfied by the *--left* command-line argument. If the preference is to have left and right pages go to different directories, use the *--right* command-line argument to specify where the righthand pages will go.
 
-The user is able to set the utility to monitor for changes (e.g. when updating kneeboards from Weapons Delivery Planner) by using the --monitor argument.
+The user is able to set the utility to monitor for changes (e.g. when updating kneeboards from Weapons Delivery Planner) by using the *--monitor* argument.
 
 The utility can also be used to simply output PNG files for other uses, but it was primarily created to use with Open Kneeboard, by setting 2 tabs, 1 each for left and right page outputs.
 
@@ -36,3 +36,6 @@ options:
   --debug            enable debug messages
 
   --silent           disable messages
+
+## Executable
+SHA256          42A410401D479356B3D47135193745907C3A0E4D1D8B72C71D01CD778B831EE8

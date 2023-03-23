@@ -17,27 +17,36 @@ The executable in Releases has been tested on Windows 10 x86_64.
 
 ## CLI Usage
 
-usage: Kneeboard Extractor [-h] [--monitor] [--basedir BASEDIR] --left LEFT
-                           [--right RIGHT] [--debug] [--silent]
+```shell
+usage: Kneeboard Extractor [-h] [--monitor] [--basedir <BASEDIR>] --left
+                           <LEFTDIR> [--right <RIGHTDIR>] [--debug] [--silent]
+                           [--version] [--force] [--restrict <L1,L2,R5...>]
 
-Extract Kneeboard images from BMS files
 
 options:
+  -h, --help            show this help message and exit
 
-  -h, --help         show this help message and exit
+  --monitor             automatically detect changes to BMS kneeboard files,
+                        and write to output directory
 
-  --monitor          automatically detect changes to BMS kneeboard files, and
-                     write to output directory
+  --basedir <BASEDIR>   BMS base directory for locating kneeboard files
 
-  --basedir BASEDIR  BMS base directory for locating kneeboard files
+  --left <LEFTDIR>      directory to output left kneeboard images
 
-  --left LEFT        directory to output left kneeboard images
+  --right <RIGHTDIR>    directory to output right kneeboard images (optional)
 
-  --right RIGHT      directory to output right kneeboard images (optional)
+  --debug               enable debug messages
 
-  --debug            enable debug messages
+  --silent              disable messages
 
-  --silent           disable messages
+  --version             show program's version number and exit
+
+  --force               force creation of target directory if it doesn't exist
+
+  --restrict <L1,L2,R5...>
+                        restrict output to a comma-delimited set of pages e.g.
+                        L1,R4,R8
+```
 
 ## Example
 
@@ -47,6 +56,6 @@ options:
 
 ## Executable
 
-v1.0.0b
+v1.1.0b
 
-SHA256 - 42A410401D479356B3D47135193745907C3A0E4D1D8B72C71D01CD778B831EE8
+SHA256 - 857C311A945E4B0ED00A252CB15AC87322F04E057E35BC2549E4EEB37EB831C8

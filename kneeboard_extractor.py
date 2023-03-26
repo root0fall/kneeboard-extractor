@@ -24,7 +24,7 @@ import winreg
 import argparse
 from PIL import Image
 
-VERSION = "1.1.0b"
+VERSION = "1.1.1b"
 
 INIT_DDS = 7982
 DDS_COUNT = 16
@@ -87,6 +87,8 @@ def get_base_dir(base_dir):
 def write_cropped(img, dims, target):
     '''write the cropped image to file with supplied dimensions'''
 
+    debug(f'writing cropped {img}, {dims}, {target}')
+
     cropped = img.crop(dims)
     info(f"writing knee: {target}")
     if not os.path.isdir(os.path.dirname(target)):
@@ -103,6 +105,7 @@ def write_new_files(base_dir, leftdir, rightdir, restrictions=None):
 
     for i in range(INIT_DDS, INIT_DDS + DDS_COUNT):
         original = os.path.join(get_dds_dir(base_dir), str(i) + EXT)
+        debug(f'processing original: {original}')
         with Image.open(original) as img:
 
             left_dims = (0,0,int(img.size[0]/2),img.size[1])
@@ -174,6 +177,7 @@ def monitor(base_dir, *dirs, **restrictions):
                 time.sleep(1)
             write_new_files(base_dir, *dirs, **restrictions)
             prev_time = new_time
+            prevl_time = get_time(check_file_last)
             info("fresh files written")
         time.sleep(0.2)
 

@@ -18,12 +18,15 @@ The executable in Releases has been tested on Windows 10 x86_64.
 ## CLI Usage
 
 ```shell
+
 usage: Kneeboard Extractor [-h] [--monitor] [--basedir <BASEDIR>] --left
                            <LEFTDIR> [--right <RIGHTDIR>] [--debug] [--silent]
                            [--version] [--force] [--restrict <L1,L2,R5...>]
-
+                           [--width <RES_VAL | VAL%>]
+                           [--height <RES_VAL | VAL%>]
 
 options:
+
   -h, --help            show this help message and exit
 
   --monitor             automatically detect changes to BMS kneeboard files,
@@ -46,6 +49,14 @@ options:
   --restrict <L1,L2,R5...>
                         restrict output to a comma-delimited set of pages e.g.
                         L1,R4,R8
+
+  --width <RES_VAL | VAL%>
+                        set width of output as absolute pixel dimension, or as
+                        percentage of original, e.g. 768 or 140%
+
+  --height <RES_VAL | VAL%>
+                        set width of output as absolute pixel dimension, or as
+                        percentage of original, e.g. 768 or 140%
 ```
 
 ## Example

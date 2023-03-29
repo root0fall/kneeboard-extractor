@@ -24,7 +24,7 @@ import winreg
 import argparse
 from PIL import Image
 
-VERSION = "1.2.0b"
+VERSION = "1.3.0b"
 
 INIT_DDS = 7982
 DDS_COUNT = 16
@@ -48,11 +48,13 @@ get_time = lambda cfile: os.stat(cfile).st_ctime
 
 def debug(message):
     '''debug message wrapper'''
+
     if DEBUG:
         sys.stderr.write(f"\n{message}\n")
 
 def info(message):
     '''print message'''
+
     if INFO:
         print(message)
 
@@ -63,6 +65,7 @@ def get_dds_dir(base_dir):
 
 def get_base_dir(base_dir):
     '''get the BMS base directory'''
+
     # pylint: disable=broad-except,too-many-nested-blocks
 
     if base_dir is None:
@@ -176,7 +179,6 @@ def monitor(base_dir, indims, *dirs, **restrictions):
 def parse_dim(dim):
     '''parse individual dimension value, int or %%'''
 
-
     if dim is None:
         return 0
 
@@ -244,12 +246,16 @@ if __name__ == "__main__":
     parser.add_argument('--height', help='''set width of output as absolute pixel dimension,
                         or as percentage of original, e.g. 768 or 140%%''',
                         metavar='<RES_VAL | VAL%>')
+    parser.add_argument('--custom', help='''specifiy a custom path for theatres other than KTO
+                        e.g. \'Data\\Add-On Balkans\\Terrdata\\objects\\KoreaObj\'''',
+                        metavar='<DDSDIR>')
 
     args = parser.parse_args()
 
     DEBUG = args.debug if args.debug is not None else DEBUG
     INFO = args.silent if args.silent is not None else INFO
     FORCE = args.force if args.force is not None else FORCE
+    DDS_DIR = args.custom if args.custom is not None else DDS_DIR
 
     if args.restrict is not None:
         page_restrictions = parse_restrictions(args.restrict)

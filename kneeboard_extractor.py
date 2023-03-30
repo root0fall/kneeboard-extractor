@@ -24,7 +24,7 @@ import winreg
 import argparse
 from PIL import Image
 
-VERSION = "1.3.0b"
+VERSION = "1.3.1b"
 
 INIT_DDS = 7982
 DDS_COUNT = 16
@@ -230,7 +230,8 @@ if __name__ == "__main__":
     parser.add_argument("--basedir", metavar='<BASEDIR>',
                         help="BMS base directory for locating kneeboard files")
     parser.add_argument("--left", required=True, metavar='<LEFTDIR>',
-                        help="directory to output left kneeboard images")
+                        help='''directory to output left kneeboard images
+                        (or ALL, if --right option omitted)''')
     parser.add_argument("--right", required=False, metavar='<RIGHTDIR>',
                         help="directory to output right kneeboard images (optional)")
     parser.add_argument("--debug", action="store_true", help="enable debug messages")

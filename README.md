@@ -14,12 +14,13 @@ It is written in python under GPL 3.0 licensing.
 
 #### The executable in Releases has been tested on Windows 10 x86_64.
 
-
 ## CLI Usage
 
 ```
 
-usage: Kneeboard Extractor [-h] [--monitor] [--basedir <BASEDIR>] --left
+usage: python kneeboard_extractor.py | kneeboard_extractor.exe
+
+                           [-h] [--monitor] [--basedir <BASEDIR>] --left
                            <LEFTDIR> [--right <RIGHTDIR>] [--debug] [--silent]
                            [--version] [--force] [--restrict <L1,L2,R5...>]
                            [--width <RES_VAL | VAL%>]
@@ -33,7 +34,8 @@ options:
 
   --basedir <BASEDIR>   BMS base directory for locating kneeboard files
 
-  --left <LEFTDIR>      directory to output left kneeboard images
+  --left <LEFTDIR>      directory to output left kneeboard images (or ALL, if
+                        --right option omitted)
 
   --right <RIGHTDIR>    directory to output right kneeboard images (optional)
 
@@ -74,9 +76,9 @@ options:
 
 ## Executable
 
-v1.3.0b
+v1.3.1b
 
-SHA256 - E26F0622C953789E67C423DD1CE1486AE45FFDAD12136BCAFAB6EF9091F1BDFF
+SHA256 - 8F36B36673D158D2A6F25EC9722C8E4F86407D1B0355921CB02F0FE8BE3BDA85
 
 ## Building from source
 

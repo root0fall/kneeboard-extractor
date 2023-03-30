@@ -17,7 +17,7 @@ It is written in python under GPL 3.0 licensing.
 
 ## CLI Usage
 
-```powershell
+```
 
 usage: Kneeboard Extractor [-h] [--monitor] [--basedir <BASEDIR>] --left
                            <LEFTDIR> [--right <RIGHTDIR>] [--debug] [--silent]
@@ -63,7 +63,7 @@ options:
 
 ## Example
 
-### launch in monitor mode (waiting for changes to kneeboard DDS files) and output all files to "E:\LEFT DIR" 
+### launch in monitor mode (waiting for changes to kneeboard DDS files) and output all files to "E:\LEFT KBD"
 
 
 `kneeboard_extractor.exe --left 'E:\LEFT KBD' --monitor`
@@ -80,7 +80,7 @@ SHA256 - E26F0622C953789E67C423DD1CE1486AE45FFDAD12136BCAFAB6EF9091F1BDFF
 
 ## Building from source
 
-`pyinstaller kneeboard_extractor --onefile`
+`pyinstaller kneeboard_extractor.py --onefile`
 
 ## Dependencies
 
